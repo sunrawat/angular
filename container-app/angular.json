@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "registration-form": {
+      "projectType": "library",
+      "root": "projects/registration-form",
+      "sourceRoot": "projects/registration-form/src",
+      "prefix": "rf",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/registration-form/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/registration-form/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/registration-form/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/registration-form/src/test.ts",
+            "tsConfig": "projects/registration-form/tsconfig.spec.json",
+            "karmaConfig": "projects/registration-form/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "container-app"

@@ -14,6 +14,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "registration-form": [
+        "dist/registration-form/registration-form",
+        "dist/registration-form"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [
