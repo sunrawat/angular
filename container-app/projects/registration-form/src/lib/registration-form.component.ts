@@ -5,7 +5,7 @@ import { RegistrationFormService } from './registration-form.service';
   selector: 'rf-registration-form',
   template: `
     <p>
-      registration-form works!
+      registration-form works  updating... !
     </p>
   `,
   styles: [
