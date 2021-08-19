@@ -9,4 +9,12 @@ To create angular library
 	ng build example-ng6-lib --watch
 
 
-	
+	https://www.tektutorialshub.com/angular/angular-how-to-use-app-initializer/
+	APP_INITIALIZER
+	With APP_INITIALIZER loading can be implemented by putting loading HTML directly
+	inside index.html with style.
+
+
+
+	https://www.9lessons.info/2019/07/angular-multi-tenant-project.html
+	Multi tenant application
