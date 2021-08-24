@@ -1,7 +1,7 @@
-To create angular library
+
 	https://medium.com/@tomsu/how-to-build-a-library-for-angular-apps-4f9b38b0ed11
 	https://itnext.io/creating-a-custom-library-with-angular-888a7e3689ca
-
+	TO CREATE ANGULAR LIBRARY
 	Prefix your project with custom name in angular.json
 		ng new lib-demo --prefix custom_name
 	generate component inside angular project
@@ -18,3 +18,6 @@ To create angular library
 
 	https://www.9lessons.info/2019/07/angular-multi-tenant-project.html
 	Multi tenant application
+
+
+	

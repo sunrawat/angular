@@ -1,8 +1,10 @@
 import { AppInitService } from './app-init.service';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { APP_INITIALIZER, DoBootstrap, Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RegistrationFormModule } from 'registration-form';
+import { ButtonComponent } from './button/button.component';
+import { createCustomElement } from '@angular/elements';
 
 function appInitializationFn1(appInitService: AppInitService) {
   return ():Promise<any> =>{
@@ -22,7 +24,9 @@ function appInitializationFn2() {
 @NgModule({
   declarations: [
     AppComponent,
+    ButtonComponent,
   ],
+  entryComponents:[ButtonComponent],
   imports: [
     BrowserModule,
     RegistrationFormModule
@@ -40,10 +44,13 @@ function appInitializationFn2() {
     multi: true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
-export class AppModule {
-  constructor() {
-    console.log('app module is called')
+export class AppModule implements DoBootstrap {
+  constructor(private injector: Injector) {
+  }
+  ngDoBootstrap() {
+    const custBtn = createCustomElement(ButtonComponent, {injector: this.injector});
+    customElements.define('suraj-button', custBtn);
   }
 }

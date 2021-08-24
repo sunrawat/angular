@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="./">
+<title>Angular 10 Elements Demo</title>
+</head>
+<body>asdsadasdasdasdasdas111
+  <suraj-button label="adasdsadsa"></suraj-button>
+  <script src="analytics-counter.js" defer></script>
+  <script>
+  window.onload = function(){
+    debugger;
+    const btn = document.querySelector('suraj-button');
+  btn.addEventListener('acton', function(e){
+    console.log('acton', e.detail);
+    setTimeout(() => {
+        btn.label="tjasbdlajkbd";
+    }, 2000);
+  });
+  };
+  </script>
+</body>
+</html>
