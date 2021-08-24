@@ -18,6 +18,10 @@
       "registration-form": [
         "dist/registration-form/registration-form",
         "dist/registration-form"
+      ],
+      "webc": [
+        "dist/webc/webc",
+        "dist/webc"
       ]
     },
     "target": "es2017",

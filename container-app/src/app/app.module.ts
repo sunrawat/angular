@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { RegistrationFormModule } from 'registration-form';
 import { ButtonComponent } from './button/button.component';
 import { createCustomElement } from '@angular/elements';
+import { NamePrintComponent } from './name-print/name-print.component';
+import { FormsModule } from '@angular/forms';
 
 function appInitializationFn1(appInitService: AppInitService) {
   return ():Promise<any> =>{
@@ -25,11 +27,13 @@ function appInitializationFn2() {
   declarations: [
     AppComponent,
     ButtonComponent,
+    NamePrintComponent,
   ],
-  entryComponents:[ButtonComponent],
+  entryComponents:[ButtonComponent, NamePrintComponent],
   imports: [
     BrowserModule,
-    RegistrationFormModule
+    FormsModule,
+    RegistrationFormModule,
   ],
   providers: [
     {
@@ -52,5 +56,7 @@ export class AppModule implements DoBootstrap {
   ngDoBootstrap() {
     const custBtn = createCustomElement(ButtonComponent, {injector: this.injector});
     customElements.define('suraj-button', custBtn);
+    const namePrintComponent = createCustomElement(NamePrintComponent, {injector: this.injector});
+    customElements.define('suraj-name-print', namePrintComponent);
   }
 }

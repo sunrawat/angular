@@ -6,18 +6,33 @@
 </head>
 <body>asdsadasdasdasdasdas111
   <suraj-button label="adasdsadsa"></suraj-button>
+  <suraj-name-print  name="age"></suraj-name-print>
   <script src="analytics-counter.js" defer></script>
   <script>
   window.onload = function(){
-    debugger;
     const btn = document.querySelector('suraj-button');
+    const snp = document.querySelector('suraj-name-print');
   btn.addEventListener('acton', function(e){
+    console.log(JSON.parse(snp.getAttribute('data-value')));
     console.log('acton', e.detail);
     setTimeout(() => {
         btn.label="tjasbdlajkbd";
     }, 2000);
   });
+  btn.addEventListener('mouseover', function(e){
+    console.log('acton', e.detail);
+    setTimeout(() => {
+        btn.label="tjasbdlajkbd";
+    }, 2000);
+  });
+
+  snp.addEventListener('saveName', function(e){
+    console.log('saveName', e.detail);
+    snp.setAttribute('data-value',JSON.stringify(e.detail) );
+  });
+
   };
+
   </script>
 </body>
 </html>
