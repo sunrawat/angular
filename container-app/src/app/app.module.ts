@@ -19,7 +19,7 @@ function appInitializationFn2() {
     setTimeout(()=>{
        resolve("done");
       console.log("called function 2");
-    }, 2000)
+    }, 500)
    })
   }
 }
@@ -48,7 +48,7 @@ function appInitializationFn2() {
     multi: true
     }
   ],
-  bootstrap: []
+  bootstrap: [AppComponent]
 })
 export class AppModule implements DoBootstrap {
   constructor(private injector: Injector) {

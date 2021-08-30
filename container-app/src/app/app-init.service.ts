@@ -12,7 +12,7 @@ export class AppInitService {
       setTimeout(()=>{
         console.log('app init recived data');
         resolve('recieved value');
-      },4000)
+      },2000)
     })
   }
 }
