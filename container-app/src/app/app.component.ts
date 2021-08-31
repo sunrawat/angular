@@ -1,46 +1,30 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { ChildComponent } from './child/child.component';
+import { Component, ViewChild, AfterViewInit, AfterViewChecked } from '@angular/core';
 
 @Component({
   selector: 'suraj-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements
-OnChanges,
-OnInit,
-DoCheck,
-AfterContentInit,
-AfterContentChecked,
-AfterViewInit,
-AfterViewChecked,
-OnDestroy {
+export class AppComponent implements AfterViewInit, AfterViewChecked {
   title = 'container-app';
-  constructor(){
-    console.log('called constructor');
+  private prevHero = '';
+  name = 'suraj rawat';
+  heros = [1,2,3,4,5,6,7];
+  @ViewChild(ChildComponent) childComponent: ChildComponent;
+  ngAfterViewInit() {
+    // viewChild is set after the view has been initialized
+    console.log('ngAfterViewInit is called from app component');
+   // this.doSomething();
   }
+  ngAfterViewChecked() {
+    if (this.prevHero === this.childComponent.hero) {
+      console.log('ngAfterViewChecked is called from app component (no change)');
+    }
+    else{
+      this.prevHero = this.childComponent.hero;
+      console.log('ngAfterViewChecked is called from app component (changed)');
+    }
 
-  ngOnChanges(){
-    console.log("ngOnChanges is called");
-  }
-  ngOnInit(){
-    console.log("ngOnInit is called");
-  }
-  ngDoCheck(){
-    console.log("ngDoCheck is called");
-  }
-  ngAfterContentInit(){
-    console.log("ngAfterContentInit is called");
-  }
-  ngAfterContentChecked(){
-    console.log("ngAfterContentChecked is called");
-  }
-  ngAfterViewInit(){
-    console.log("ngAfterViewInit is called");
-  }
-  ngAfterViewChecked(){
-    console.log("ngAfterViewChecked is called");
-  }
-  ngOnDestroy(){
-    console.log("ngOnDestroy is called");
   }
 }

@@ -7,6 +7,8 @@ import { ButtonComponent } from './button/button.component';
 import { createCustomElement } from '@angular/elements';
 import { NamePrintComponent } from './name-print/name-print.component';
 import { FormsModule } from '@angular/forms';
+import { SpyDirective } from './spy.directive';
+import { ChildComponent } from './child/child.component';
 
 function appInitializationFn1(appInitService: AppInitService) {
   return ():Promise<any> =>{
@@ -28,6 +30,8 @@ function appInitializationFn2() {
     AppComponent,
     ButtonComponent,
     NamePrintComponent,
+    SpyDirective,
+    ChildComponent,
   ],
   entryComponents:[ButtonComponent, NamePrintComponent],
   imports: [
