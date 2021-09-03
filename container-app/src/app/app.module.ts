@@ -9,6 +9,10 @@ import { NamePrintComponent } from './name-print/name-print.component';
 import { FormsModule } from '@angular/forms';
 import { SpyDirective } from './spy.directive';
 import { ChildComponent } from './child/child.component';
+import { ParComponent } from './encapsulation/par/par.component';
+import { C1Component } from './encapsulation/c1/c1.component';
+import { C2Component } from './encapsulation/c2/c2.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 function appInitializationFn1(appInitService: AppInitService) {
   return ():Promise<any> =>{
@@ -32,12 +36,16 @@ function appInitializationFn2() {
     NamePrintComponent,
     SpyDirective,
     ChildComponent,
+    ParComponent,
+    C1Component,
+    C2Component,
   ],
   entryComponents:[ButtonComponent, NamePrintComponent],
   imports: [
     BrowserModule,
     FormsModule,
     RegistrationFormModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {

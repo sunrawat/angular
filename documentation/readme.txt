@@ -22,3 +22,21 @@
 
 	web components
 	https://www.blogger.com/blog/post/edit/4278423013832893399/1590819547275506486
+
+
+	Component Life cycle
+	https://angular.io/guide/lifecycle-hooks
+
+	View encapsulation
+	https://angular.io/guide/view-encapsulation
+
+
+
+	Add bootstrap , jquery, angular material
+	ng add @angular/material
+	npm install bootstrap
+	npm install jquery
+
+	 "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
+            ],
